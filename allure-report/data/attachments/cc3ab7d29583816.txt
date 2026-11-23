@@ -1,0 +1,10 @@
+application lounched successfully
+login is successfull
+home page is visible
+product nos: 6
+Sauce Labs Backpackadded to cart
+shopping cart located
+product name verified successfully
+checkout page is opened
+Shipping details entered successfully
+product purchase done successfully

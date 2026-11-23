@@ -1,0 +1,122 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: tests\flaky.spec.js >> flaky test 2
+- Location: tests\flaky.spec.js:12:1
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: 'Hello World!' })
+Expected: visible
+Timeout: 1000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" getByRole('heading', { name: 'Hello World!' }) with timeout 1000ms
+  - waiting for getByRole('heading', { name: 'Hello World!' })
+
+```
+
+```yaml
+- paragraph:
+  - link "PMP Practice":
+    - /url: https://pmp.expandtesting.com/
+  - text: "| Free PMP Certification Mock Exam Test +900 Questions & Quizzes"
+- banner:
+  - navigation "Main navigation":
+    - link "SUT":
+      - /url: /
+      - 'img "Best Website for Practice Automation Testing: Free UI and REST API Examples and Apps. Using Cypress, Playwright, Selenium, WebdriverIO and Postman."'
+      - text: Practice
+    - list:
+      - listitem:
+        - button "Demos"
+      - listitem:
+        - link "Tools":
+          - /url: /#tools
+      - listitem:
+        - link "Tips":
+          - /url: /tips
+      - listitem:
+        - link "Test Cases":
+          - /url: /test-cases
+      - listitem:
+        - link "API Testing":
+          - /url: /notes/api/api-docs/
+      - listitem:
+        - link "About":
+          - /url: /about
+    - list
+    - link "Free ISTQB Mock Exams":
+      - /url: https://istqb.expandtesting.com/
+- main:
+  - insertion:
+    - iframe
+  - paragraph:
+    - text: Do you enjoy this platform? ❤️
+    - link "Buy us a coffee":
+      - /url: https://www.buymeacoffee.com/expandtesting
+  - insertion:
+    - iframe
+  - navigation "breadcrumb mb-2":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - text: /
+        - link "Dynamically Loaded Page Elements":
+          - /url: /dynamic-loading
+      - listitem: "/ Example 2: Element rendered after the fact"
+  - 'heading "Example 2: Element rendered after the fact" [level=1]'
+  - button "Start"
+  - insertion:
+    - iframe
+- contentinfo:
+  - heading "Practice Test Automation WebSite for Web UI and Rest API" [level=4]
+  - paragraph:
+    - text: "Version: e64cd80e | Copyright"
+    - link "Expand Testing":
+      - /url: https://expandtesting.com/
+    - text: "2026"
+- img
+```
+
+# Test source
+
+```ts
+  1  | const {test,expect}=require('@playwright/test');
+  2  | test.skip('flaky test',async({page})=>{
+  3  |     page.goto('https://testautomationpractice.blogspot.com/.');
+  4  |     
+  5  |     const btn=page.locator('.start');
+  6  |     await btn.waitFor({state:'visible'});
+  7  |     await btn.click();
+  8  |     
+  9  | 
+  10 | 
+  11 | })
+  12 | test('flaky test 2',async({page})=>{
+  13 |     page.goto('https://practice.expandtesting.com/dynamic-loading/2');
+  14 |     
+  15 |     const btn=page.getByRole('button',{name:"Start"});
+  16 |     
+  17 |     await btn.click();
+> 18 |     await expect(page.getByRole('heading',{name:"Hello World!"})).toBeVisible({timeout:1000});
+     |                                                                   ^ Error: expect(locator).toBeVisible() failed
+  19 | 
+  20 |     
+  21 | 
+  22 | 
+  23 | })
+  24 | 
+  25 | 
+```

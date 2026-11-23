@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"2f95697dd44dccab81fcaeeba1f0b724","name":"tests\\basicCheck.spec.js","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}},{"uid":"194ce7a43862fb5dd2d226f85008fa6a","name":"tests\\saucedemo3.spec.js","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}

@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","16868","login and complete product purchase","","2026-11-10","passed","2026-11-10","","tests\saucedemo3.spec.js","",""
+"","3907","verify url contain signup","","2026-11-10","passed","2026-11-10","","tests\basicCheck.spec.js","",""
+"","7347","verify page title contains automation","","2026-11-10","passed","2026-11-10","","tests\basicCheck.spec.js","",""
